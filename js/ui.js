@@ -5,7 +5,8 @@ window.addEventListener('load', startGame);
 
 export let boardEl = document.getElementById('board');
 export let modalEl = document.getElementById('modal');
-let resetButtons = document.getElementsByClassName('reset');
+export let resetButtons = document.getElementsByClassName('reset');
+export let buttonResWrapper = document.querySelector('.panel');
 
 for (let btn of resetButtons) {
   btn.addEventListener('click', function () {
