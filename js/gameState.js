@@ -1,14 +1,54 @@
 // gameState.js - для управления состоянием игры
 
+import renderBoard from './renderBoard.js';
+
 export let players = ['x', 'o'];
 export let activePlayer = players[0];
-// export let activePlayer = prompt('Выбери игрока ', 'x')
-
 export let board = [
   ['', '', ''],
   ['', '', ''],
   ['', '', ''],
 ];
+
+// Функция для обновления доски
+export const updateBoard = (newBoard) => {
+  board = newBoard;
+  renderBoard(board);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  let radioButtons = document.querySelectorAll('.difficultyRadio');
+
+  radioButtons.forEach((radio) => {
+    radio.addEventListener('change', (e) => {
+      let difficultyLevel = e.target.value;
+      if (difficultyLevel === 'easy') {
+        updateBoard([
+          ['', '', ''],
+          ['', '', ''],
+          ['', '', ''],
+        ]);
+      } else if (difficultyLevel === 'hardcore') {
+        updateBoard([
+          ['', '', '', ''],
+          ['', '', '', ''],
+          ['', '', '', ''],
+          ['', '', '', ''],
+          ['', '', '', ''],
+        ]);
+      } else {
+        updateBoard([
+          ['', '', '', '', ''],
+          ['', '', '', '', ''],
+          ['', '', '', '', ''],
+          ['', '', '', '', ''],
+          ['', '', '', '', ''],
+        ])
+      }
+    });
+  });
+});
+
 export const setActivePlayer = (player) => {
   activePlayer = player;
 };

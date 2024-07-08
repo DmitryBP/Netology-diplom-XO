@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Крестики-нолики</title>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="board"></div>
 
-<div id="board"></div>
-
-<div id="modal" class="hidden">
-    <div id="modal__window">
+    <div id="modal" class="hidden">
+      <div id="modal__window">
         <h2></h2>
         <div id="modal__buttons ">
-            <button class="reset">Играть еще</button>
+          <button class="reset">Играть еще</button>
         </div>
+      </div>
     </div>
-</div>
 
-<div id="modal" class="startModal ">
-    <div id="modal__window">
-        <h2>Выбери игрока </h2>
+    <div id="modal" class="startModal">
+      <div id="modal__window">
+        <h2>Выбери игрока</h2>
         <div id="modal__buttons">
-            <button class="player">x</button>
-            <button class="player">o</button>
+          <button class="player">x</button>
+          <button class="player">o</button>
         </div>
+        <div id="modal__difficultyLevel">
+          <fieldset>
+            <legend>Уровень сложности</legend>
+            <label class="difficultyLabel">
+              <input
+                type="radio"
+                name="difficultlyLevel"
+                value="easy"
+                class="difficultyRadio"
+                checked
+              />
+              I Can Win
+            </label>
+            <label class="difficultyLabel">
+              <input
+                type="radio"
+                name="difficultlyLevel"
+                value="hardcore"
+                class="difficultyRadio"
+              />
+              Hardcore
+            </label>
+            <label class="difficultyLabel">
+              <input
+                type="radio"
+                name="difficultlyLevel"
+                value="nightmare"
+                class="difficultyRadio"
+              />
+              Nightmare
+            </label>
+          </fieldset>
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="panel">
-    <button class="reset">С начала</button>
-</div>
+    <div class="panel">
+      <button class="reset">С начала</button>
+    </div>
 
-<script src="./js/ui.js" type="module"></script>
-<script src="./js/gameState.js" type="module"></script>
-</body>
+    <script src="./js/ui.js" type="module"></script>
+    <script src="./js/gameState.js" type="module"></script>
+  </body>
 </html>
