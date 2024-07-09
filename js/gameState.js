@@ -5,10 +5,12 @@ import renderBoard from './renderBoard.js';
 export let players = ['x', 'o'];
 export let activePlayer = players[0];
 export let board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', ''],
+  ['', '', '', ''],
+  ['', '', '', ''],
+  ['', '', '', ''],
+  ['', '', '', ''],
 ];
+export let difficultyLevel = 'easy';
 
 // Функция для обновления доски
 export const updateBoard = (newBoard) => {
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   radioButtons.forEach((radio) => {
     radio.addEventListener('change', (e) => {
-      let difficultyLevel = e.target.value;
+      difficultyLevel = e.target.value;
       if (difficultyLevel === 'easy') {
         updateBoard([
           ['', '', ''],
@@ -34,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
           ['', '', '', ''],
           ['', '', '', ''],
           ['', '', '', ''],
-          ['', '', '', ''],
         ]);
       } else {
         updateBoard([
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ['', '', '', '', ''],
           ['', '', '', '', ''],
           ['', '', '', '', ''],
-        ])
+        ]);
       }
     });
   });
